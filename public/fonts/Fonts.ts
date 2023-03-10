@@ -1,4 +1,4 @@
-import { Poppins, Jost, Kalam } from "next/font/google"
+import { Poppins, Jost, Kalam, Inter } from "next/font/google"
 
 export const jost = Jost({
   subsets: ['latin'],
@@ -15,4 +15,9 @@ export const poppins = Poppins({
   subsets: ['latin'],
   variable: '--font-poppins',
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+})
+
+export const inter = Inter({
+  subsets: ['latin'],
+  variable: "--font-inter"
 })

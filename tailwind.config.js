@@ -11,11 +11,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-jost)'],
+        sans: ['var(--font-inter)'],
         display: ['var(--font-kalam)'],
       },
       backgroundImage: {
         'background': "url('/background.jpg')",
+        'CoverImg': "url('/cover.jpg')"
       }
     },
   },
