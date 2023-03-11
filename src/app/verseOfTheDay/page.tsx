@@ -90,9 +90,9 @@ export default async function VerseOfTheDay() {
 
     const translation = gitaTranslationsByVerseId.nodes[0].description;
 
-    return (<div className="min-h-screen bg-neutral-900 text-white">
-        <Header />
-        <div className="container h-full mx-auto my-10 max-w-5xl p-2">
+    return (
+    <div className="min-h-screen bg-neutral-900 text-white">
+        <div className="container h-full mx-auto pt-5 max-w-5xl p-2">
             <div className="flex flex-col gap-y-5 justify-center items-center text-center">
                 <h1 className="min-w-screen font-extrabold text-3xl">{`Bhagwad Gita - ${chapterNumber}.${verseNumber}`}</h1>
                 <p className={`text-3xl text-orange-400 ${kalam.variable} font-display max-w-md`}>{text}</p>

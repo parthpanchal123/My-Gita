@@ -33,10 +33,9 @@ export default function Home() {
     //   </div>
     // </div>
 
-    <div className="w-screen h-screen bg-background bg-no-repeat bg-cover overflow-y-auto overflow-x-hidden">
+    <div className="min-w-screen bg-background bg-no-repeat bg-cover overflow-y-auto overflow-x-hidden">
       <div className="h-screen w-screen backdrop-blur-md">
-        <Header />
-        <div className="container flex flex-col md:flex-row md:h-screen justify-center m-auto items-center gap-x-5 sm:gap-y-6 p-4">
+        <div className="container flex flex-col md:flex-row md:min-h-screen justify-center m-auto items-center gap-x-5 sm:gap-y-6 p-2">
           <div className="w-full md:w-1/2 md:h-full flex justify-center items-center">
             <Image src={"/cover.jpg"} width={500} height={500} alt="Cover Image" className="w-full rounded-md border-solid border-2 border-white drop-shadow-2xl" />
           </div>

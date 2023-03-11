@@ -1,3 +1,4 @@
+import Header from '@/components/Header'
 import { inter } from '../../public/fonts/Fonts'
 import './globals.css'
 
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} font-sans`}>
-      <body>{children}</body>
+      {/* <body>{children}</body> */}
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
