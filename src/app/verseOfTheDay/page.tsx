@@ -98,7 +98,7 @@ export default async function VerseOfTheDay() {
                 <p className={`text-3xl text-orange-400 ${kalam.variable} font-display max-w-md`}>{text}</p>
 
                 <p className={`text-xl text-white ${inter.variable} font-sans mx-auto max-w-md`}>{transliteration}</p>
-                <ul className=" flex flex-row flex-wrap text-justify gap-2 justify-left items-start max-w-md">
+                <ul className=" flex flex-row flex-wrap text-center gap-2 justify-center items-start max-w-md">
                     {
                         splitMeanings.map(meaning => {
 
