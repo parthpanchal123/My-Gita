@@ -103,13 +103,13 @@ export default async function VerseOfTheDay() {
                         <p className={`text-xl text-white ${inter.variable} font-sans mx-auto max-w-md`}>{transliteration}</p>
                         <ul className=" flex flex-row flex-wrap text-center gap-2 justify-center items-start max-w-md">
                             {
-                                splitMeanings.map(meaning => {
+                                splitMeanings.map((meaning, index) => {
 
                                     const lastIndex = meaning.lastIndexOf("—");
                                     const word = meaning.slice(0, lastIndex)
                                     const m = meaning.slice(lastIndex + 1)
 
-                                    return <li key={meaning}>
+                                    return <li key={index}>
                                         <span className="font-bold text-orange-200">{word}</span>
                                         <span> - </span>
                                         <span className="text-white">{m}</span>
