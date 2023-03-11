@@ -1,3 +1,5 @@
+import { kalam } from "../../public/fonts/Fonts";
+
 const ChapterTile = ({ chapter }) => {
     return (
         < div
@@ -8,9 +10,9 @@ const ChapterTile = ({ chapter }) => {
                 className="flex flex-col bg-dark-100 z-30 shadow-xl  border-2 border-white dark:border-dark-bg mt-6 rounded-md p-6 hover:bg-box-bg dark:hover:bg-dark-bg hover:shadow-none hover:border-box-stroke dark:hover:border-dark-100 hover:border-2 hover:cursor-pointer dark:text-gray-200"
             >
                 <h3 className="text-orange-500 font-bold">{`Chapter ${chapter.chapterNumber}`}</h3>
-                <div className="flex flex-row gap-1">
-                    <span className="text-h2 text-xl font-bold dark:text-white">{chapter.nameMeaning}</span>
-                    <span className="text-h2 text-xl font-bold dark:text-white">{` (${chapter.name}) `}</span>
+                <div className="gap-1">
+                    <span className="text-xl font-bold dark:text-white">{chapter.nameTranslated}</span>
+                    <span className={`text-xl ${kalam.variable} font-display font-bold d text-orange-200`}>{` (${chapter.name}) `}</span>
                 </div>
                 {/* <p className="flex-1 text-gray-500 dark:text-gray-100 mt-2"> */}
                 <div className="line-clamp-5">
