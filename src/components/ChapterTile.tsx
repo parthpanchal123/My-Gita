@@ -7,10 +7,10 @@ const ChapterTile = ({ chapter }) => {
             className=" w-full md:w-1/2 p-4"
         >
             <div
-                className="flex flex-col bg-dark-100 z-30 shadow-xl  border-2 border-white dark:border-dark-bg mt-6 rounded-md p-6 hover:bg-box-bg dark:hover:bg-dark-bg hover:shadow-none hover:border-box-stroke dark:hover:border-dark-100 hover:border-2 hover:cursor-pointer dark:text-gray-200"
+                className="flex flex-col hover:transition ease-in-out delay-100 bg-neutral-800 hover:bg-neutral-900 hover:border border-neutral-800 z-30 shadow-xl mt-6 rounded-md p-6 hover:cursor-pointer text-gray-200"
             >
                 <h3 className="text-orange-500 font-bold">{`Chapter ${chapter.chapterNumber}`}</h3>
-                <div className="gap-1">
+                <div className="gap-1 flex flex-col ">
                     <span className="text-xl font-bold dark:text-white">{chapter.nameTranslated}</span>
                     <span className={`text-xl ${kalam.variable} font-display font-bold d text-orange-200`}>{` (${chapter.name}) `}</span>
                 </div>

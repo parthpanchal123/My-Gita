@@ -45,14 +45,14 @@ export default function Home() {
               <h1 className={`text-white underline ${kalam.variable} font-display font-bold text-5xl sm:text-md sn:text-center mt-3`}>सम्पूर्ण श्रीमद्‍भगवद्‍गीता</h1>
               <h1 className={`text-black ${inter.variable} font-sans font-black text-2xl`}>The Song of God</h1>
               <h1 className={`mt-3 text-black text-base flex ${inter.variable} font-sans font-extrabold`}>The Bhagavad Gita, a revered text of old,
-                A song of divine wisdom that's forever told,
-                In poetic verses, it reveals life's deepest truths,
-                Guiding souls towards liberation, breaking ego's roots.</h1>
+                A song of divine wisdom that&apos;s forever told,
+                In poetic verses, it reveals life&apos;s deepest truths,
+                Guiding souls towards liberation, breaking ego&apos;s roots.</h1>
             </div>
             <div className="flex w-full flex-col backdrop-blur-2xl bg-white/30 rounded-md p-4 justify-center items-start">
               <div className="flex gap-5 flex-wrap">
                 <Link href={"/verseOfTheDay"}><button className="bg-gradient-to-t from-orange-500 via-orange-300 to-amber-400 text-black font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">Verse Of The Day</button></Link>
-                <Link href={"/chapters"}><button className="bg-gradient-to-t from-orange-500 via-orange-300 to-amber-400 text-black font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">Chapter Wise</button></Link>
+                <Link href={"/chapter"}><button className="bg-gradient-to-t from-orange-500 via-orange-300 to-amber-400 text-black font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">Chapter Wise</button></Link>
                 <button className="bg-gradient-to-t from-orange-500 via-orange-300 to-amber-400 text-black font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">Specific Shlok</button>
               </div>
             </div>
