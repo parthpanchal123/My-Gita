@@ -52,7 +52,7 @@ export default function Home() {
             <div className="flex w-full flex-col backdrop-blur-2xl bg-white/30 rounded-md p-4 justify-center items-start">
               <div className="flex gap-5 flex-wrap">
                 <Link href={"/verseOfTheDay"}><button className="bg-gradient-to-t from-orange-500 via-orange-300 to-amber-400 text-black font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">Verse Of The Day</button></Link>
-                <button className="bg-gradient-to-t from-orange-500 via-orange-300 to-amber-400 text-black font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">Chapter Wise</button>
+                <Link href={"/chapters"}><button className="bg-gradient-to-t from-orange-500 via-orange-300 to-amber-400 text-black font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">Chapter Wise</button></Link>
                 <button className="bg-gradient-to-t from-orange-500 via-orange-300 to-amber-400 text-black font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">Specific Shlok</button>
               </div>
             </div>
