@@ -3,6 +3,8 @@ import axios from "axios";
 import { inter, kalam } from "../../../public/fonts/Fonts";
 import Image from "next/image";
 import Pattern from "../../../public/pattern.svg"
+import { Suspense } from "react";
+import Loading from "./loading";
 
 async function getVerseId() {
     const payload = {
@@ -91,38 +93,41 @@ export default async function VerseOfTheDay() {
     const translation = gitaTranslationsByVerseId.nodes[0].description;
 
     return (
-    <div className="min-h-screen bg-neutral-900 text-white">
-        <div className="container h-full mx-auto pt-5 max-w-5xl p-2">
-            <div className="flex flex-col gap-y-5 justify-center items-center text-center">
-                <h1 className="min-w-screen font-extrabold text-3xl">{`Bhagwad Gita - ${chapterNumber}.${verseNumber}`}</h1>
-                <p className={`text-3xl text-orange-400 ${kalam.variable} font-display max-w-md`}>{text}</p>
+        <Suspense fallback={<Loading />}>
+            <div className="min-h-screen bg-neutral-900 text-white">
+                <div className="container h-full mx-auto pt-5 max-w-5xl p-2">
+                    <div className="flex flex-col gap-y-5 justify-center items-center text-center">
+                        <h1 className="min-w-screen font-extrabold text-3xl">{`BG - ${chapterNumber}.${verseNumber}`}</h1>
+                        <p className={`text-3xl text-orange-400 ${kalam.variable} font-display max-w-md`}>{text}</p>
 
-                <p className={`text-xl text-white ${inter.variable} font-sans mx-auto max-w-md`}>{transliteration}</p>
-                <ul className=" flex flex-row flex-wrap text-center gap-2 justify-center items-start max-w-md">
-                    {
-                        splitMeanings.map(meaning => {
+                        <p className={`text-xl text-white ${inter.variable} font-sans mx-auto max-w-md`}>{transliteration}</p>
+                        <ul className=" flex flex-row flex-wrap text-center gap-2 justify-center items-start max-w-md">
+                            {
+                                splitMeanings.map(meaning => {
 
-                            const lastIndex = meaning.lastIndexOf("—");
-                            const word = meaning.slice(0, lastIndex)
-                            const m = meaning.slice(lastIndex + 1)
+                                    const lastIndex = meaning.lastIndexOf("—");
+                                    const word = meaning.slice(0, lastIndex)
+                                    const m = meaning.slice(lastIndex + 1)
 
-                            return <li key={meaning}>
-                                <span className="font-bold text-orange-200">{word}</span>
-                                <span> - </span>
-                                <span className="text-white">{m}</span>
-                            </li>
+                                    return <li key={meaning}>
+                                        <span className="font-bold text-orange-200">{word}</span>
+                                        <span> - </span>
+                                        <span className="text-white">{m}</span>
+                                    </li>
 
-                        })
+                                })
 
-                    }
-                </ul>
-                <Pattern />
+                            }
+                        </ul>
+                        <Pattern />
 
-                <h1 className="min-w-screen font-extrabold text-3xl">Translation</h1>
-                <p className={`text-md text-justify ${inter.variable} font-sans`}>{translation}</p>
-                <h1 className="min-w-screen font-extrabold text-3xl">Commentary</h1>
-                <p className={`text-md text-justify ${inter.variable} font-sans`}>{commentaryDesc}</p>
+                        <h1 className="min-w-screen font-extrabold text-3xl">Translation</h1>
+                        <p className={`text-md text-justify ${inter.variable} font-sans`}>{translation}</p>
+                        <h1 className="min-w-screen font-extrabold text-3xl">Commentary</h1>
+                        <p className={`text-md text-justify ${inter.variable} font-sans`}>{commentaryDesc}</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>);
+        </Suspense>
+    );
 }

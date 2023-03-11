@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 const Loading = () => {
 	return (
 		<div className="min-h-screen bg-neutral-900 text-white">
-			<Header />
+			{/* <Header /> */}
 			<div className="container h-full mx-auto max-w-5xl p-2">
 				<h1 className="min-w-screen font-extrabold text-3xl ml-4">Chapters</h1>
 				<div className="flex flex-col flex-wrap md:flex-row min-w-screen">

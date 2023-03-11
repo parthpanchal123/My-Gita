@@ -4,6 +4,8 @@ import { inter, kalam } from "../../../../public/fonts/Fonts";
 import Image from "next/image";
 import Pattern from "../../../../public/pattern.svg"
 import Link from "next/link";
+import { Suspense } from "react";
+import Loading from "@/app/verseOfTheDay/loading";
 
 async function getVerseId() {
     const payload = {
@@ -93,45 +95,48 @@ export default async function Verse(context) {
     const translation = gitaTranslationsByVerseId.nodes[0].description;
 
     return (
-        <div className="min-h-screen bg-neutral-900 text-white">
-            <div className="container h-full mx-auto pt-5 max-w-5xl p-2">
-                <div className="flex flex-col gap-y-5 justify-center items-center text-center">
-                    <h1 className="min-w-screen font-extrabold text-3xl">{`Bhagwad Gita - ${chapterNumber}.${verseNumber}`}</h1>
-                    <p className={`text-3xl text-orange-400 ${kalam.variable} font-display max-w-md`}>{text}</p>
+        <Suspense fallback={<Loading />}>
+            <div className="min-h-screen bg-neutral-900 text-white">
+                <div className="container h-full mx-auto pt-5 max-w-5xl p-2">
+                    <div className="flex flex-col gap-y-5 justify-center items-center text-center">
+                        <h1 className="min-w-screen font-extrabold text-3xl">{`BG - ${chapterNumber}.${verseNumber}`}</h1>
+                        <p className={`text-3xl text-orange-400 ${kalam.variable} font-display max-w-md`}>{text}</p>
 
-                    <p className={`text-xl text-white ${inter.variable} font-sans mx-auto max-w-md`}>{transliteration}</p>
-                    <ul className=" flex flex-row flex-wrap text-center gap-2 justify-center items-start max-w-md">
+                        <p className={`text-xl text-white ${inter.variable} font-sans mx-auto max-w-md`}>{transliteration}</p>
+                        <ul className=" flex flex-row flex-wrap text-center gap-2 justify-center items-start max-w-md">
+                            {
+                                splitMeanings.map(meaning => {
+
+                                    const lastIndex = meaning.lastIndexOf("—");
+                                    const word = meaning.slice(0, lastIndex)
+                                    const m = meaning.slice(lastIndex + 1)
+
+                                    return <li key={meaning}>
+                                        <span className="font-bold text-orange-200">{word}</span>
+                                        <span> - </span>
+                                        <span className="text-white">{m}</span>
+                                    </li>
+
+                                })
+
+                            }
+                        </ul>
+                        <Pattern />
+
+                        <h1 className="min-w-screen font-extrabold text-3xl">Translation</h1>
+                        <p className={`text-md text-justify ${inter.variable} font-sans`}>{translation}</p>
+                        <h1 className="min-w-screen font-extrabold text-3xl">Commentary</h1>
+                        <p className={`text-md text-justify ${inter.variable} font-sans`}>{commentaryDesc}</p>
                         {
-                            splitMeanings.map(meaning => {
-
-                                const lastIndex = meaning.lastIndexOf("—");
-                                const word = meaning.slice(0, lastIndex)
-                                const m = meaning.slice(lastIndex + 1)
-
-                                return <li key={meaning}>
-                                    <span className="font-bold text-orange-200">{word}</span>
-                                    <span> - </span>
-                                    <span className="text-white">{m}</span>
-                                </li>
-
-                            })
-
+                            verseId !== "1" && <Link href={`/verse/${parseInt(verseId) - 1}`}><div className="rounded-full h-10 w-10 fixed z-neg top-1/2 md:top-1/3 left-3 hover:brightness-90 hover:cursor-pointer flex justify-center items-center  bg-dark-100 dark:hover:bg-dark-bg dark:border-gray-600 border"><svg width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-50"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.707.293a1 1 0 0 1 0 1.414L2.414 5l3.293 3.293a1 1 0 0 1-1.414 1.414l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 0 1 1.414 0Z" fill="currentColor"></path></svg></div></Link>
                         }
-                    </ul>
-                    <Pattern />
+                        {
+                            verseId !== "701" && <Link href={`/verse/${parseInt(verseId) + 1}`}><div className="rounded-full h-10 w-10 fixed z-neg top-1/2 md:top-1/3 right-3 hover:brightness-90 hover:cursor-pointer flex justify-center items-center bg-dark-100 dark:hover:bg-dark-bg dark:border-gray-600 border"><svg width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg" className="dark:text-gray-50"><path fill-rule="evenodd" clip-rule="evenodd" d="M.293 9.707a1 1 0 0 1 0-1.414L3.586 5 .293 1.707A1 1 0 0 1 1.707.293l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414 0Z" fill="currentColor"></path></svg></div></Link>
+                        }
 
-                    <h1 className="min-w-screen font-extrabold text-3xl">Translation</h1>
-                    <p className={`text-md text-justify ${inter.variable} font-sans`}>{translation}</p>
-                    <h1 className="min-w-screen font-extrabold text-3xl">Commentary</h1>
-                    <p className={`text-md text-justify ${inter.variable} font-sans`}>{commentaryDesc}</p>
-                    {
-                        verseId !== "1" && <Link href={`/verse/${parseInt(verseId) - 1}`}><div className="rounded-full h-10 w-10 fixed z-neg top-1/2 md:top-1/3 left-3 hover:brightness-90 hover:cursor-pointer flex justify-center items-center  bg-dark-100 dark:hover:bg-dark-bg dark:border-gray-600 border"><svg width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-50"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.707.293a1 1 0 0 1 0 1.414L2.414 5l3.293 3.293a1 1 0 0 1-1.414 1.414l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 0 1 1.414 0Z" fill="currentColor"></path></svg></div></Link>
-                    }
-                    {
-                        verseId !== "701" && <Link href={`/verse/${parseInt(verseId) + 1}`}><div className="rounded-full h-10 w-10 fixed z-neg top-1/2 md:top-1/3 right-3 hover:brightness-90 hover:cursor-pointer flex justify-center items-center bg-dark-100 dark:hover:bg-dark-bg dark:border-gray-600 border"><svg width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg" className="dark:text-gray-50"><path fill-rule="evenodd" clip-rule="evenodd" d="M.293 9.707a1 1 0 0 1 0-1.414L3.586 5 .293 1.707A1 1 0 0 1 1.707.293l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414 0Z" fill="currentColor"></path></svg></div></Link>
-                    }
-
+                    </div>
                 </div>
             </div>
-        </div>);
+        </Suspense>
+    );
 }
