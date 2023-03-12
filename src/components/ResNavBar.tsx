@@ -20,20 +20,20 @@ function ResNavBar() {
                                     <div className="ml-10 flex items-baseline justify-center space-x-4">
                                         <Link
                                             href="/"
-                                            className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                                            className="transition ease-out hover:drop-shadow-2xl hover:bg-neutral-800 text-white px-3 py-2 rounded-md text-sm font-medium"
                                         >
                                             Home
                                         </Link>
                                         <Link
                                             href="/chapter"
-                                            className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                                            className=" hover:bg-neutral-800 text-white px-3 py-2 rounded-md text-sm font-medium"
                                         >
                                             Chapters
                                         </Link>
 
                                         <Link
                                             href="/verseOfTheDay"
-                                            className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                            className="text-gray-300 hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                         >
                                             Verse Of The Day
                                         </Link>
@@ -44,7 +44,7 @@ function ResNavBar() {
                                 <button
                                     onClick={() => setIsOpen(!isOpen)}
                                     type="button"
-                                    className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                    className=" transition ease-in bg-neutral-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                     aria-controls="mobile-menu"
                                     aria-expanded="false"
                                 >
@@ -101,40 +101,29 @@ function ResNavBar() {
                     {(ref) => (
                         <div className="md:hidden" id="mobile-menu">
                             <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                                <a
-                                    href="#"
-                                    className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
+                                <Link
+                                    href="/"
+                                    className="hover:bg-neutral-800 text-white block px-3 py-2 rounded-md text-base font-medium"
+                                    onClick={() => setIsOpen(!isOpen)}
                                 >
-                                    Dashboard
-                                </a>
+                                    Home
+                                </Link>
 
-                                <a
-                                    href="#"
-                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                <Link
+                                    href="/chapter"
+                                    className="text-gray-300 hover:bg-neutral-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                    onClick={() => setIsOpen(!isOpen)}
                                 >
-                                    Team
-                                </a>
+                                    Chapters
+                                </Link>
 
-                                <a
-                                    href="#"
-                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                <Link
+                                    href="/verseOfTheDay"
+                                    className="text-gray-300 hover:bg-neutral-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                    onClick={() => setIsOpen(!isOpen)}
                                 >
-                                    Projects
-                                </a>
-
-                                <a
-                                    href="#"
-                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                                >
-                                    Calendar
-                                </a>
-
-                                <a
-                                    href="#"
-                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                                >
-                                    Reports
-                                </a>
+                                    Verse Of The Day
+                                </Link>
                             </div>
                         </div>
                     )}

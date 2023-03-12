@@ -11,8 +11,6 @@ import ScrollUp from "../../../../public/scroll-up.svg"
 import PerChapterLoading from "./loading";
 
 
-
-
 export default function ChapterData(context) {
 
 	const [verseNumber, setVerseNumber] = useState("");
@@ -118,13 +116,13 @@ export default function ChapterData(context) {
 				<div className="container h-full mx-auto pt-5 max-w-5xl p-2">
 					<div className="flex flex-col gap-y- justify-center items-center text-center ">
 						<div className="max-w-5xl font-inter py-22 mx-auto text-center px-4 sm:px-6 relative">
-							<ChapterBg className="absolute text-gray-300 w-full lg:w-min dark:text-black text-opacity-25 dark:text-opacity-25 rounded-full m-auto left-0 right-0 bottom-0 -top-20 lg:top-20" />
-							<h1 className="text-xl uppercase font-medium text-orange-400 min-w-screen">{`Chapter - ${chapterNumber}`}</h1>
-							<h1 className="font-extrabold text-white my-8 text-3xl">{chapterData.nameTranslated}</h1>
-							<p className="text-justify dark:text-white mt-3 text-md">{chapterData.chapterSummary}</p>
+							<ChapterBg className="z-0 absolute text-gray-300 w-full lg:w-min dark:text-black text-opacity-25 dark:text-opacity-25 rounded-full m-auto left-0 right-0 bottom-0 lg:top-20" />
+							<h1 className="text-xl uppercase font-medium text-orange-400 min-w-screen z-50">{`Chapter - ${chapterNumber}`}</h1>
+							<h1 className="font-extrabold text-white my-8 text-3xl z-50">{chapterData.nameTranslated}</h1>
+							<p className="text-justify dark:text-white mt-3 text-md z-50">{chapterData.chapterSummary}</p>
 						</div>
 
-						<Pattern />
+						{/* <Pattern /> */}
 
 
 						{
