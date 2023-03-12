@@ -137,10 +137,10 @@ export default function ChapterData(context) {
 					</div>
 					<div className="max-w-5xl py-4 mb-16 mx-auto px-4 sm:px-6">
 						<div className="max-w-5xl font-inter mx-auto text-center  px-4 sm:px-6">
-							<div className="flex items-center justify-between border-t py-6 border-b gap-x-5 border-gray-200">
+							<div className="flex items-center justify-between border-t py-6 border-b gap-x-1 border-gray-200">
 								<div className="font-extrabold text-white text-md">{`${chapterData.versesCount} Verses`}</div>
-								<div className="mt-1 flex rounded-md shadow-sm relative">
-									<div className="relative flex items-stretch flex-grow focus-within:z-10">
+								<div className="mt-1 flex rounded-md shadow-sm ">
+									<div className=" w-100% flex items-stretch flex-grow focus-within:z-10">
 										<input value={verseNumber} onChange={handleVerseChange} placeholder="Enter Verse No." className="rounded-md py-2 px-1 border border-white bg-neutral-700 focus-within:border-orange-500"></input>
 									</div>
 								</div>
