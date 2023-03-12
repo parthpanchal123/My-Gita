@@ -116,7 +116,7 @@ export default function ChapterData(context) {
 		<Suspense fallback={<PerChapterLoading />}>
 			<div className="min-h-screen bg-neutral-900 text-white">
 				<div className="container h-full mx-auto pt-5 max-w-5xl p-2">
-					<div className="flex flex-col gap-y- justify-center items-center text-center relative">
+					<div className="flex flex-col gap-y- justify-center items-center text-center ">
 						<div className="max-w-5xl font-inter py-22 mx-auto text-center px-4 sm:px-6 relative">
 							<ChapterBg className="absolute text-gray-300 w-full lg:w-min dark:text-black text-opacity-25 dark:text-opacity-25 rounded-full m-auto left-0 right-0 bottom-0 -top-20 lg:top-20" />
 							<h1 className="text-xl uppercase font-medium text-orange-400 min-w-screen">{`Chapter - ${chapterNumber}`}</h1>
@@ -135,13 +135,13 @@ export default function ChapterData(context) {
 							chapterNumber !== "18" && <Link href={`/chapter/${parseInt(chapterNumber) + 1}`}><div className="rounded-full h-10 w-10 fixed z-neg top-1/2 md:top-1/3 right-3 hover:brightness-90 hover:cursor-pointer flex justify-center items-center bg-dark-100 dark:hover:bg-dark-bg dark:border-gray-600 border"><svg width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg" className="dark:text-gray-50"><path fillRule="evenodd" clipRule="evenodd" d="M.293 9.707a1 1 0 0 1 0-1.414L3.586 5 .293 1.707A1 1 0 0 1 1.707.293l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414 0Z" fill="currentColor"></path></svg></div></Link>
 						}
 					</div>
-					<div className="max-w-5xl py-4 mb-16 mx-auto px-4 sm:px-6">
-						<div className="max-w-5xl font-inter mx-auto text-center  px-4 sm:px-6">
-							<div className="flex items-center justify-between border-t py-6 border-b gap-x-1 border-gray-200">
+					<div className="max-w-5xl py-4 mb-16 px-4 sm:px-6">
+						<div className="max-w-5xl font-inter  text-center  px-4 sm:px-6">
+							<div className="flex flex-col md:flex-row items-center justify-between border-t py-6 border-b gap-x-1 sm:gap-y-1 border-gray-200">
 								<div className="font-extrabold text-white text-md">{`${chapterData.versesCount} Verses`}</div>
-								<div className="mt-1 flex rounded-md shadow-sm ">
-									<div className=" w-100% flex items-stretch flex-grow focus-within:z-10">
-										<input value={verseNumber} onChange={handleVerseChange} placeholder="Enter Verse No." className="rounded-md py-2 px-1 border border-white bg-neutral-700 focus-within:border-orange-500"></input>
+								<div className="mt-1 flex rounded-md shadow-sm">
+									<div className="flex items-stretch flex-grow focus-within:z-10">
+										<input value={verseNumber} onChange={handleVerseChange} placeholder="Enter Verse No." className="w-100% rounded-md py-2 px-1 border border-white bg-neutral-700 focus-within:border-orange-500"></input>
 									</div>
 								</div>
 							</div>
