@@ -4,7 +4,8 @@ import { inter, kalam } from "../../../public/fonts/Fonts";
 import Image from "next/image";
 import Pattern from "../../../public/pattern.svg"
 import { Suspense } from "react";
-import Loading from "./loading";
+import Loading from "@/components/Loading";
+import VerseOTDLoading from "./loading";
 
 async function getVerseId() {
     const payload = {
@@ -93,7 +94,7 @@ export default async function VerseOfTheDay() {
     const translation = gitaTranslationsByVerseId.nodes[0].description;
 
     return (
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<VerseOTDLoading />}>
             <div className="min-h-screen bg-neutral-900 text-white">
                 <div className="container h-full mx-auto pt-5 max-w-5xl p-2">
                     <div className="flex flex-col gap-y-5 justify-center items-center text-center">
