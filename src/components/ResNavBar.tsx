@@ -20,20 +20,20 @@ function ResNavBar() {
                                     <div className="ml-10 flex items-baseline justify-center space-x-4">
                                         <Link
                                             href="/"
-                                            className="transition ease-out hover:drop-shadow-2xl hover:bg-neutral-800 text-white px-3 py-2 rounded-md text-sm font-medium"
+                                            className="transition ease-out hover:drop-shadow-2xl hover:bg-neutral-800 text-white px-3 py-2 rounded-md text-base font-medium"
                                         >
                                             Home
                                         </Link>
                                         <Link
                                             href="/chapter"
-                                            className=" hover:bg-neutral-800 text-white px-3 py-2 rounded-md text-sm font-medium"
+                                            className=" hover:bg-neutral-800 text-white px-3 py-2 rounded-md text-base font-medium"
                                         >
                                             Chapters
                                         </Link>
 
                                         <Link
                                             href="/verseOfTheDay"
-                                            className="text-gray-300 hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                            className="text-gray-300 hover:bg-neutral-800 hover:text-white px-3 py-2 rounded-md text-base font-medium"
                                         >
                                             Verse Of The Day
                                         </Link>
