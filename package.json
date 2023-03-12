@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "v1",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@types/node": "18.14.6",
     "@types/react": "18.0.28",

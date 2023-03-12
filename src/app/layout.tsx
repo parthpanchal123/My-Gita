@@ -1,4 +1,5 @@
 import Header from '@/components/Header'
+import ResNavBar from '@/components/ResNavBar'
 import Head from 'next/head'
 import { inter } from '../../public/fonts/Fonts'
 import './globals.css'
@@ -28,7 +29,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body>
-        <Header />
+        <ResNavBar />
         {children}
       </body>
     </html>
