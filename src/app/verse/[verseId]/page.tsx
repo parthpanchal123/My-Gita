@@ -158,8 +158,8 @@ export default async function Verse(context) {
                         </div>
                         <div className="flex flex-col w-100% justify-start items-start ">
                             {
-                                commentaryDesc.others.map(commentary => (
-                                    <div className="flex flex-col justify-start items-start border-b border-gray-200 gap-y-1 py-4">
+                                commentaryDesc.others.map((commentary, index) => (
+                                    <div key={index} className="flex flex-col justify-start items-start border-b border-gray-200 gap-y-1 py-4">
                                         <h1 className="text-md mb-2">By - <span className="text-orange-400 italic text-base">{commentary.authorName}<span className="text-white non-italic capitalize"> , in {commentary.language}</span></span></h1>
                                         <p className={`text-md text-justify ${inter.variable} font-sans`}>{commentary.description}</p>
                                     </div>
