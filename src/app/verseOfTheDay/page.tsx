@@ -52,9 +52,12 @@ async function getCommentary(verseId: String) {
         "operationName": "MyQuery",
         "variables": {},
         "query": `query MyQuery {
-            allGitaCommentaries(condition:{authorId:16 , verseId:${verseId}}){
+            allGitaCommentaries(condition:{verseId:${verseId}}){
               nodes {
                 description
+                authorName
+                language
+                authorId
               }
             }
           }
@@ -71,7 +74,21 @@ async function getCommentary(verseId: String) {
         throw new Error('Failed to fetch data');
     }
 
-    return response.data.data.allGitaCommentaries.nodes[0].description;
+    let allLanguageCommentaries = response.data.data.allGitaCommentaries.nodes;
+
+    allLanguageCommentaries = allLanguageCommentaries.filter((comm) => !comm.description.includes("did not comment") || !comm.description.includes("no"))
+
+    const englishCommData = allLanguageCommentaries.filter((data) => data.authorId === 16)[0]
+
+    let retData = {
+        english: englishCommData,
+        others: allLanguageCommentaries.filter((data) => data.authorId !== 16)
+    }
+
+
+    return retData;
+
+    // return response.data.data.allGitaCommentaries.nodes[0].description;
 
 }
 
@@ -125,7 +142,25 @@ export default async function VerseOfTheDay() {
                         <h1 className="min-w-screen font-extrabold text-3xl">Translation</h1>
                         <p className={`text-md text-justify ${inter.variable} font-sans`}>{translation}</p>
                         <h1 className="min-w-screen font-extrabold text-3xl">Commentary</h1>
-                        <p className={`text-md text-justify ${inter.variable} font-sans`}>{commentaryDesc}</p>
+                        <div className="flex flex-col justify-start items-start border-b border-gray-200 gap-y-1 py-4">
+                            {
+                                <>
+                                    <h1 className="text-md mb-2">By - <span className="text-orange-400 italic text-base">{commentaryDesc.english.authorName}</span></h1>
+                                    <p className={`text-md text-justify ${inter.variable} font-sans`}>{commentaryDesc.english.description}</p>
+                                </>
+                            }
+                        </div>
+                        <div className="flex flex-col w-100% justify-start items-start ">
+                            {
+                                commentaryDesc.others.map(commentary => (
+                                    <div className="flex flex-col justify-start items-start border-b border-gray-200 gap-y-1 py-4">
+                                        <h1 className="text-md mb-2">By - <span className="text-orange-400 italic text-base">{commentary.authorName}<span className="text-white non-italic capitalize"> , in {commentary.language}</span></span></h1>
+                                        <p className={`text-md text-justify ${inter.variable} font-sans`}>{commentary.description}</p>
+                                    </div>
+
+                                ))
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

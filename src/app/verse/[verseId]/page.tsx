@@ -52,9 +52,12 @@ async function getCommentary(verseId: String) {
         "operationName": "MyQuery",
         "variables": {},
         "query": `query MyQuery {
-            allGitaCommentaries(condition:{authorId:16 , verseId:${verseId}}){
+            allGitaCommentaries(condition:{verseId:${verseId}}){
               nodes {
+                authorName
+                authorId
                 description
+                language
               }
             }
           }
@@ -71,7 +74,26 @@ async function getCommentary(verseId: String) {
         throw new Error('Failed to fetch data');
     }
 
-    return response.data.data.allGitaCommentaries.nodes[0].description;
+    // response.data.data.allGitaCommentaries.nodes
+    // let commentaryData = {
+    //     english : {
+    //         description : 
+    //     }
+    // }
+
+    let allLanguageCommentaries = response.data.data.allGitaCommentaries.nodes;
+
+    allLanguageCommentaries = allLanguageCommentaries.filter((comm) => !comm.description.includes("did not comment") || !comm.description.includes("no"))
+
+    const englishCommData = allLanguageCommentaries.filter((data) => data.authorId === 16)[0]
+
+    let retData = {
+        english: englishCommData,
+        others: allLanguageCommentaries.filter((data) => data.authorId !== 16)
+    }
+
+
+    return retData;
 
 }
 
@@ -126,7 +148,25 @@ export default async function Verse(context) {
                         <h1 className="min-w-screen font-extrabold text-3xl">Translation</h1>
                         <p className={`text-md text-justify ${inter.variable} font-sans`}>{translation}</p>
                         <h1 className="min-w-screen font-extrabold text-3xl">Commentary</h1>
-                        <p className={`text-md text-justify ${inter.variable} font-sans`}>{commentaryDesc}</p>
+                        <div className="flex flex-col justify-start items-start border-b border-gray-200 gap-y-1 py-4">
+                            {
+                                <>
+                                    <h1 className="text-md mb-2">By - <span className="text-orange-400 italic text-base">{commentaryDesc.english.authorName}</span></h1>
+                                    <p className={`text-md text-justify ${inter.variable} font-sans`}>{commentaryDesc.english.description}</p>
+                                </>
+                            }
+                        </div>
+                        <div className="flex flex-col w-100% justify-start items-start ">
+                            {
+                                commentaryDesc.others.map(commentary => (
+                                    <div className="flex flex-col justify-start items-start border-b border-gray-200 gap-y-1 py-4">
+                                        <h1 className="text-md mb-2">By - <span className="text-orange-400 italic text-base">{commentary.authorName}<span className="text-white non-italic capitalize"> , in {commentary.language}</span></span></h1>
+                                        <p className={`text-md text-justify ${inter.variable} font-sans`}>{commentary.description}</p>
+                                    </div>
+
+                                ))
+                            }
+                        </div>
                         {
                             verseId !== "1" && <Link href={`/verse/${parseInt(verseId) - 1}`}><div className="rounded-full h-10 w-10 fixed z-neg top-1/2 md:top-1/3 left-3 hover:brightness-90 hover:cursor-pointer flex justify-center items-center  bg-dark-100 dark:hover:bg-dark-bg dark:border-gray-600 border"><svg width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gray-50"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.707.293a1 1 0 0 1 0 1.414L2.414 5l3.293 3.293a1 1 0 0 1-1.414 1.414l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 0 1 1.414 0Z" fill="currentColor"></path></svg></div></Link>
                         }
@@ -137,6 +177,6 @@ export default async function Verse(context) {
                     </div>
                 </div>
             </div>
-        </Suspense>
+        </Suspense >
     );
 }
