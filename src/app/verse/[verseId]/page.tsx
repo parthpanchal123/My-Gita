@@ -1,11 +1,9 @@
-import Header from "@/components/Header";
 import axios from "axios";
-import { inter, kalam } from "../../../../public/fonts/Fonts";
-import Image from "next/image";
-import Pattern from "../../../../public/pattern.svg"
+import Pattern from "../../../../public/pattern.svg";
 import Link from "next/link";
 import { Suspense } from "react";
 import Loading from "@/app/verseOfTheDay/loading";
+import { kalam, inter } from "../../../../utils/fonts/Fonts";
 
 async function getVerseId() {
     const payload = {
@@ -73,13 +71,6 @@ async function getCommentary(verseId: String) {
     if (response.status != 200) {
         throw new Error('Failed to fetch data');
     }
-
-    // response.data.data.allGitaCommentaries.nodes
-    // let commentaryData = {
-    //     english : {
-    //         description : 
-    //     }
-    // }
 
     let allLanguageCommentaries = response.data.data.allGitaCommentaries.nodes;
 

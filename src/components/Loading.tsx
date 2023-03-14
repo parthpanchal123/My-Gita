@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Om from "../../public/om.png"
+import Om from "../../public/om.png";
 
 const Loading = () => {
     return (

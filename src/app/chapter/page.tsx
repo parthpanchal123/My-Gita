@@ -46,10 +46,7 @@ export default async function Chapters() {
 		<div className="min-h-screen bg-neutral-900 text-white">
 
 			<div className="container h-full mx-auto max-w-5xl p-2">
-				{/* <div className="flex flex-col gap-y-5 justify-center items-center text-center"> */}
 				<h1 className="min-w-screen font-extrabold text-3xl ml-4 mt-2">Chapters</h1>
-				{/* </div> */}
-
 				<div className="flex flex-col flex-wrap md:flex-row min-w-screen">
 					{
 						chapterData.map((chapter, index) => (
@@ -61,7 +58,6 @@ export default async function Chapters() {
 					}
 				</div>
 			</div >
-
 		</div >
 	)
 };

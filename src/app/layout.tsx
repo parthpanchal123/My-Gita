@@ -1,7 +1,5 @@
-import Header from '@/components/Header'
 import ResNavBar from '@/components/ResNavBar'
-import Head from 'next/head'
-import { inter } from '../../public/fonts/Fonts'
+import { inter } from '../../utils/fonts/Fonts'
 import './globals.css'
 
 export const metadata = {
@@ -27,6 +25,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        <link rel="preload" href="/home-cover.webp" as="image" />
       </head>
       <body>
         <ResNavBar />

@@ -1,11 +1,11 @@
 import Header from "@/components/Header";
 import axios from "axios";
-import { inter, kalam } from "../../../public/fonts/Fonts";
 import Image from "next/image";
 import Pattern from "../../../public/pattern.svg"
 import { Suspense } from "react";
 import Loading from "@/components/Loading";
 import VerseOTDLoading from "./loading";
+import { kalam, inter } from "../../../utils/fonts/Fonts";
 
 async function getVerseId() {
     const payload = {
@@ -87,8 +87,6 @@ async function getCommentary(verseId: String) {
 
 
     return retData;
-
-    // return response.data.data.allGitaCommentaries.nodes[0].description;
 
 }
 

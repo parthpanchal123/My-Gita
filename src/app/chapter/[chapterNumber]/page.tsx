@@ -1,13 +1,10 @@
 "use client"
-import ChapterBg from "../../../../public/chapter-bg.svg"
-import Pattern from "../../../../public/pattern.svg"
-import { inter, kalam } from '../../../../public/fonts/Fonts';
+import ChapterBg from "../../../../public/chapter-bg.svg";
 import Link from "next/link";
 import { Suspense, useEffect, useState } from "react";
-import Loading from "./loading";
-import useSWR from 'swr'
+import useSWR from 'swr';
 import axios from "axios";
-import ScrollUp from "../../../../public/scroll-up.svg"
+import ScrollUp from "../../../../public/scroll-up.svg";
 import PerChapterLoading from "./loading";
 
 
@@ -23,7 +20,6 @@ export default function ChapterData(context) {
 	const chapterNumber = context.params.chapterNumber;
 
 	const fetchData = () => {
-		// let chapterNumber = "1"
 
 		const payload = {
 			"query": `query MyQuery {allGitaChapters(condition:{chapterNumber:${chapterNumber}}){nodes {versesCount nameTranslated chapterSummary gitaVersesByChapterId{nodes{verseNumber transliteration id } } } }}`
@@ -106,10 +102,6 @@ export default function ChapterData(context) {
 	if (error) return <div>Failed to load</div>
 	if (!data) return <PerChapterLoading />
 
-	// const { versesCount, nameTranslated, chapterSummary, gitaVersesByChapterId } = data.data.data.allGitaChapters.nodes[0];
-
-	// const verseData = gitaVersesByChapterId?.nodes;
-
 	return (
 		<Suspense fallback={<PerChapterLoading />}>
 			<div className="min-h-screen bg-neutral-900 text-white">
@@ -167,39 +159,12 @@ export default function ChapterData(context) {
 	);
 }
 
-// export async function getStaticPaths() {
-
-// 	const pathIds = Array.from(Array(12).keys()).map(x => x + 1);
-
-// 	const paths = pathIds.map(pathId => ({
-// 		params: {
-// 			chapterNumber: pathId
-// 		}
-// 	}))
-
-// 	console.log("YOO");
-
-// 	console.log(pathIds);
-
-// 	return {
-// 		paths,
-// 		fallback: false,
-// 	};
-
-// }
-
 export async function generateStaticParams() {
 	const pathIds = Array.from(Array(12).keys()).map(x => x + 1);
 
 	const paths = pathIds.map(pathId => ({
-		// params: {
 		chapterNumber: pathId
-		// }
 	}))
-
-	console.log("YOO");
-
-	console.log(pathIds);
 
 	return {
 		paths,

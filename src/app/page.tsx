@@ -1,13 +1,10 @@
-import CoverImage from "../../public/cover.jpg"
-import Image from "next/image"
-import { poppins, kalam, inter } from "../../public/fonts/Fonts"
+
 import Link from "next/link"
-import Header from "@/components/Header"
-// bg-background bg-no-repeat bg-right-top backdrop-blur-lg bg-cover"
+import { kalam, inter } from "../../utils/fonts/Fonts"
 export default function Home() {
   return (
     <div className="h-screen min-w-screen bg-neutral-900 p-2">
-      <section className="container relative h-3/5 m-auto drop-shadow-2xl">
+      <section className="container h-3/5 m-auto drop-shadow-2xl">
         <div className="mt-2 rounded-md absolute inset-0 bg-cover bg-center	 bg-backdrop-blur" style={{ opacity: "0.7" }}></div>
         <div className="flex flex-col absolute inset-0 justify-end items-center">
           <h1 className={`text-3xl md:text-5xl text-center font-extrabold ${kalam.variable} font-display drop-shadow-2xl text-white t-shadow z-50`}>सम्पूर्ण श्रीमद्‍भगवद्‍गीता</h1>

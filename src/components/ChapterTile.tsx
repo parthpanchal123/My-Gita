@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { kalam } from "../../public/fonts/Fonts";
+import { kalam } from "../../utils/fonts/Fonts";
 
 const ChapterTile = ({ chapter }) => {
     return (
@@ -16,7 +16,6 @@ const ChapterTile = ({ chapter }) => {
                         <span className="text-xl font-bold dark:text-white">{chapter.nameTranslated}</span>
                         <span className={`text-xl ${kalam.variable} font-display font-bold d text-orange-200`}>{` (${chapter.name}) `}</span>
                     </div>
-                    {/* <p className="flex-1 text-gray-500 dark:text-gray-100 mt-2"> */}
                     <div className="line-clamp-5">
                         {chapter.chapterSummary}
                     </div>
