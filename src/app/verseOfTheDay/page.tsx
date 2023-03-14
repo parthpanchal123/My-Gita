@@ -1,11 +1,8 @@
-import Header from "@/components/Header";
 import axios from "axios";
-import Image from "next/image";
-import Pattern from "../../../public/pattern.svg"
 import { Suspense } from "react";
-import Loading from "@/components/Loading";
+import Pattern from "../../../public/pattern.svg";
+import { inter, kalam } from "../../../utils/fonts/Fonts";
 import VerseOTDLoading from "./loading";
-import { kalam, inter } from "../../../utils/fonts/Fonts";
 
 async function getVerseId() {
     const payload = {
