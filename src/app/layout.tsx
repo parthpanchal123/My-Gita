@@ -3,13 +3,10 @@ import { inter } from '../../utils/fonts/Fonts'
 import './globals.css'
 
 export const metadata = {
-  title: 'Bhagwad Gita',
   viewport: "width=device-width, initial-scale=1.0",
-  description: 'Complete Bhagwad Gita',
   icons: {
     icon: '/images/favicon.ico',
     apple: '/images/apple-icon.png',
-
   },
 }
 
