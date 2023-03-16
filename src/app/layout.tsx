@@ -24,6 +24,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="preload" href="/home-cover.webp" as="image" />
+        <meta name="google-site-verification" content="Nn6UdJ1-wZliN0TspEHLehu1aUSKje9FVuaCWFAzJqc" />
       </head>
       <body>
         <ResNavBar />
