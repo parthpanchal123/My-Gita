@@ -4,6 +4,7 @@ import './globals.css'
 
 export const metadata = {
   viewport: "width=device-width, initial-scale=1.0",
+  keywords: ["Bhagavad Gita", "Hinduism", "Sanskrit", "Lord Krishna", "Arjuna", "Mahabharata", "Sacred texts", "Chapter summaries", "Verse of the day", "Spirituality", "Yoga", "Self-realization", "Karma", "Dharma", "Bhakti", "Jnana", "Vedanta", "Philosophy", "Wisdom", "Eastern religion", "Sanatan Dharma"],
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-icon.png',
