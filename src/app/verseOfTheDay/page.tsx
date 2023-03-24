@@ -4,6 +4,8 @@ import Pattern from "../../../public/pattern.svg";
 import { inter, kalam } from "../../../utils/fonts/Fonts";
 import VerseOTDLoading from "./loading";
 
+export const revalidate = 43200;
+
 async function getVerseId() {
     const payload = {
         "operationName": "MyQuery",
