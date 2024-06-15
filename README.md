@@ -8,7 +8,7 @@
 
 #  Stack
 
-✨ NextJS 13 with Server Side Components (app directory) as well as client side components.
+✨ NextJS 14 with Server Side Components (app directory) as well as client side components.
 
 ✨ Tailwind CSS for the UI components design.
 
