@@ -39,7 +39,7 @@ export const NEXT_SEO_DEFAULT = {
       "Explore the timeless wisdom of the Bhagavad Gita. Discover the teachings of Lord Krishna and their relevance to modern life chapter/verse wise",
     images: [
       {
-        url: "https://my-gita.vercel.app/home-cover.webp",
+        url: "https://i.imgur.com/86wv8cm.png",
         alt: "Cover Image",
       },
     ],
@@ -47,5 +47,6 @@ export const NEXT_SEO_DEFAULT = {
   twitter: {
     cardType: "summary_large_image",
     site: "https://my-gita.vercel.app/",
+    image: "https://i.imgur.com/86wv8cm.png",
   },
 };

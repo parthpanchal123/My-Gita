@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Explore the timeless wisdom of the Bhagavad Gita. Discover the teachings of Lord Krishna and their relevance to modern life chapter/verse wise.",
     images: [
       {
-        url: "https://my-gita.vercel.app/home-cover.webp",
+        url: "https://i.imgur.com/86wv8cm.png",
         alt: "Cover Image",
       },
     ],
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Bhagavad Gita",
     description: "A collection of summaries of the Bhagavad Gita in English",
     card: "summary_large_image",
-    site: "https://camo.githubusercontent.com/9a2e87970d1777b98410250c45524ed70bf124f69e14446c7ef88374de9e5778/68747470733a2f2f692e696d6775722e636f6d2f33595945796a732e706e67",
+    image: "https://i.imgur.com/86wv8cm.png",
   },
 };
 
