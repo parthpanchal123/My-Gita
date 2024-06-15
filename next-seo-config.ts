@@ -3,6 +3,7 @@ export const NEXT_SEO_DEFAULT = {
   description:
     "Explore the timeless wisdom of the Bhagavad Gita. Discover the teachings of Lord Krishna and their relevance to modern life chapter/verse wise",
   canonical: "https://my-gita.vercel.app/",
+
   additionalLinkTags: [
     {
       rel: "icon",

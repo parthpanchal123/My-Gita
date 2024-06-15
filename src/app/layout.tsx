@@ -8,6 +8,21 @@ export const metadata: Metadata = {
   title: "Bhagavad Gita",
   description:
     "Explore the timeless wisdom of the Bhagavad Gita. Discover the teachings of Lord Krishna and their relevance to modern life chapter/verse wise.",
+  openGraph: {
+    type: "website",
+    locale: "en_IE",
+    url: "https://my-gita.vercel.app/",
+    siteName: "Bhagavad Gita",
+    title: "Bhagavad Gita",
+    description:
+      "Explore the timeless wisdom of the Bhagavad Gita. Discover the teachings of Lord Krishna and their relevance to modern life chapter/verse wise.",
+    images: [
+      {
+        url: "https://my-gita.vercel.app/home-cover.webp",
+        alt: "Cover Image",
+      },
+    ],
+  },
   keywords: [
     "Bhagavad Gita",
     "Hinduism",
