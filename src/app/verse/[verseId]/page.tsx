@@ -4,58 +4,6 @@ import Link from "next/link";
 import { Suspense } from "react";
 import Loading from "@/app/verseOfTheDay/loading";
 import { kalam, inter } from "../../../../utils/fonts/Fonts";
-import type { Metadata } from "next";
-import { ResolvingMetadata } from "next/dist/lib/metadata/types/metadata-interface";
-import { log } from "console";
-
-export async function generateMetadata(
-  { params, searchParams }: any,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  // read route params
-  const id = params.verseId;
-
-  const payload = {
-    operationName: "MyQuery",
-    variables: {},
-    query: `query MyQuery {\n  allGitaVerses(condition: {id: ${id}}) {\n    nodes {\n      verseNumber\n      chapterNumber\n      id\n      text\n      transliteration\n      wordMeanings\n      gitaTranslationsByVerseId(condition: {authorName: \"Swami Sivananda\"}) {\n        nodes {\n          description\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}`,
-  };
-
-  const response = await axios({
-    url: "https://gql.bhagavadgita.io/graphql",
-    method: "post",
-    data: payload,
-  });
-
-  return {
-    title: response.data.data.allGitaVerses.nodes[0].transliteration,
-    description:
-      response.data.data.allGitaVerses.nodes[0].gitaTranslationsByVerseId,
-    keywords: [
-      "Bhagavad Gita",
-      "Hinduism",
-      "Sanskrit",
-      "Lord Krishna",
-      "Arjuna",
-      "Mahabharata",
-      "Sacred texts",
-      "Chapter summaries",
-      "Verse of the day",
-      "Spirituality",
-      "Yoga",
-      "Self-realization",
-      "Karma",
-      "Dharma",
-      "Bhakti",
-      "Jnana",
-      "Vedanta",
-      "Philosophy",
-      "Wisdom",
-      "Eastern religion",
-      "Sanatan Dharma",
-    ],
-  };
-}
 
 async function getVerseId() {
   const payload = {
