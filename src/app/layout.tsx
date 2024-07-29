@@ -2,6 +2,7 @@ import ResNavBar from "@/components/ResNavBar";
 import { inter } from "../../utils/fonts/Fonts";
 import "./globals.css";
 import { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   viewport: "width=device-width, initial-scale=1.0",
@@ -93,6 +94,7 @@ export default function RootLayout({
       <body>
         <ResNavBar />
         {children}
+        <Analytics />
       </body>
     </html>
   );
