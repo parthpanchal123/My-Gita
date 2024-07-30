@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Transition } from "@headlessui/react";
+import ChapterBg from "../../public/mandala.svg";
 
 function ResNavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,9 +14,12 @@ function ResNavBar() {
       <nav className="w-screen">
         <div className="flex flex-row justify-between items-center">
           <div className="justify-between items-center flex-grow">
-            <Link href={"/"} className="text-underline text-orange-300">
-              My-Gita 📖
-            </Link>
+            <div className="flex flex-row gap-x-1 justify-start items-center">
+              <ChapterBg className="text-orange text-opacity-25 dark:text-opacity-25 rounded-full" />
+              <Link href={"/"} className="text-underline text-orange-300">
+                My-Gita
+              </Link>
+            </div>
           </div>
           <div className="justify-end mx-auto px-4 sm:px-6 lg:px-2">
             <div className="max-w-lg flex justify-between items-center  md:justify-center  h-16">
