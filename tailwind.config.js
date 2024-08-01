@@ -11,17 +11,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)'],
-        display: ['var(--font-kalam)'],
+        sans: ["var(--font-inter)"],
+        display: ["var(--font-kalam)"],
       },
       backgroundImage: {
-        'background': "url('/background.jpg')",
-        'cover': "url('/home-cover.webp')",
-        'CoverImg': "url('/cover.jpg')"
-      }
+        background: "url('/background.jpg')",
+        cover: "url('/home-cover.webp')",
+        CoverImg: "url('/cover.jpg')",
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-  ],
-}
+  plugins: [],
+};

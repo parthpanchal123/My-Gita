@@ -5,8 +5,6 @@ import { inter, kalam } from "../../../utils/fonts/Fonts";
 import VerseOTDLoading from "./loading";
 import type { Metadata } from "next";
 
-export const revalidate = 43200;
-
 export const metadata: Metadata = {
   title: "Bhagwad Gita - Verse of the day",
   description: "Get the verse of the day from Bhagwad Gita",
