@@ -5,7 +5,6 @@ import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  viewport: "width=device-width, initial-scale=1.0",
   title: "Bhagavad Gita",
   description:
     "Explore the timeless wisdom of the Bhagavad Gita. Discover the teachings of Lord Krishna and their relevance to modern life chapter/verse wise.",
