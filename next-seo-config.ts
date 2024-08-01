@@ -1,5 +1,5 @@
 export const NEXT_SEO_DEFAULT = {
-  title: "Bhagavad Gita",
+  title: "My-Gita",
   description:
     "Explore the timeless wisdom of the Bhagavad Gita. Discover the teachings of Lord Krishna and their relevance to modern life chapter/verse wise",
   canonical: "https://my-gita.vercel.app/",
@@ -33,8 +33,8 @@ export const NEXT_SEO_DEFAULT = {
     type: "website",
     locale: "en_IE",
     url: "https://my-gita.vercel.app/",
-    siteName: "Bhagavad Gita",
-    title: "Bhagavad Gita",
+    siteName: "My-Gita",
+    title: "My-Gita",
     description:
       "Explore the timeless wisdom of the Bhagavad Gita. Discover the teachings of Lord Krishna and their relevance to modern life chapter/verse wise",
     images: [
