@@ -5,15 +5,15 @@ import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Bhagavad Gita",
+  title: "My-Gita",
   description:
     "Explore the timeless wisdom of the Bhagavad Gita. Discover the teachings of Lord Krishna and their relevance to modern life chapter/verse wise.",
   openGraph: {
     type: "website",
     locale: "en_IE",
     url: "https://my-gita.vercel.app/",
-    siteName: "Bhagavad Gita",
-    title: "Bhagavad Gita",
+    siteName: "My-Gita",
+    title: "My-Gita",
     description:
       "Explore the timeless wisdom of the Bhagavad Gita. Discover the teachings of Lord Krishna and their relevance to modern life chapter/verse wise.",
     images: [
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     apple: "/apple-icon.png",
   },
   twitter: {
-    title: "Bhagavad Gita",
+    title: "My-Gita",
     description: "A collection of summaries of the Bhagavad Gita in English",
     card: "summary_large_image",
     image: "https://i.imgur.com/86wv8cm.png",
