@@ -6,6 +6,26 @@
 
 ![](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
+My-Gita: The Song Of God 🎵📜
+
+Discover the timeless wisdom of the Bhagavad Gita through a unique digital tapestry of perspectives. My-Gita presents all 18 chapters of this sacred text, with each verse accompanied by insightful explanations from multiple revered saints and scholars across centuries. 🧘‍♂️💡
+
+Key features: ✨
+
+1. Complete Bhagavad Gita text in original Sanskrit with transliteration 📚🔠
+
+2. Verse-by-verse breakdowns with translations 🧩🌏
+
+3. Verse of the day 📅🙏
+
+4. Curated commentaries from diverse spiritual luminaries 🧠👥
+
+5. Interactive comparison tool to explore different interpretations 🔍🤔
+
+6. Responsive design for seamless reading across devices 📱💻
+
+Dive deep into the ocean of Vedic knowledge, guided by the brilliant minds who've illuminated this path before us. "My-Gita" offers a revolutionary way to study, contemplate, and apply the eternal teachings of Lord Krishna. 🌊🧘‍♂️🕉️
+
 #  Stack
 
 ✨ NextJS 14 with Server Side Components (app directory) as well as client side components.
