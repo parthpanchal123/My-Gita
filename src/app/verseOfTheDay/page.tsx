@@ -6,7 +6,7 @@ import VerseOTDLoading from "./loading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "My-Gita - Verse of the day",
+  title: "My-Gita - Verse Of The Day",
   description: "Get the verse of the day from Bhagavad Gita",
   keywords: [
     "Bhagavad Gita",
