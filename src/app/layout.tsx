@@ -3,6 +3,7 @@ import { inter } from "../../utils/fonts/Fonts";
 import "./globals.css";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "My-Gita",
@@ -94,6 +95,7 @@ export default function RootLayout({
         <ResNavBar />
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
