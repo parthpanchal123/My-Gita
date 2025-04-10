@@ -157,7 +157,7 @@ export default function ChapterDetails({
               </div>
             </div>{" "}
             {chapterData.verseArray?.map((verse: any) => (
-              <Link href={`/verse/${verse.id}`} key={verse.id}>
+              <Link href={`/chapter/${chapterNumber}/verse/${verse.verseNumber}`} key={verse.id}>
                 <div className="w-full flex flex-col lg:flex-row py-2 lg:py-5 justify-between px-6 hover:cursor-pointer hover:bg-neutral-800 rounded-lg mt-5">
                   <div className="lg:w-1/5 font-medium text-orange-400 uppercase text-md text-left">{`Verse ${verse.verseNumber}`}</div>
                   <div className="flex-1 text-left text-gray-900 dark:text-gray-50 sm:mt-0 sm:col-span-4 text-md">
