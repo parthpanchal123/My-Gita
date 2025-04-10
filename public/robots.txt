@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://my-gita.vercel.app/sitemap.xml
+
+# Disallow admin or private areas if you add them later
+# Disallow: /admin/
+# Disallow: /private/ 

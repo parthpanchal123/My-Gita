@@ -5,6 +5,8 @@ import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import Script from "next/script";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "My-Gita",
@@ -56,7 +58,7 @@ export const metadata: Metadata = {
     title: "My-Gita",
     description: "A collection of summaries of the Bhagavad Gita in English",
     card: "summary_large_image",
-    image: "https://i.imgur.com/86wv8cm.png",
+    images: ["https://i.imgur.com/86wv8cm.png"],
   },
 };
 
@@ -91,9 +93,26 @@ export default function RootLayout({
           name="google-site-verification"
           content="Nn6UdJ1-wZliN0TspEHLehu1aUSKje9FVuaCWFAzJqc"
         />
+        <Script id="structured-data" type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "My-Gita",
+              "url": "https://my-gita.vercel.app/",
+              "description": "Explore the timeless wisdom of the Bhagavad Gita. Discover the teachings of Lord Krishna and their relevance to modern life chapter/verse wise.",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://my-gita.vercel.app/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+          `}
+        </Script>
       </head>
       <body>
         <ResNavBar />
+        <Breadcrumb />
         {children}
         <Analytics />
         <SpeedInsights />

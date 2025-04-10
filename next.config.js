@@ -42,6 +42,23 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  
+  // Add image optimization
+  images: {
+    domains: ['i.imgur.com'],
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
+  
+  // Add trailing slashes for better SEO
+  trailingSlash: true,
+  
+  // Add compression for better performance
+  compress: true,
+  
+  // Add powered by header removal
+  poweredByHeader: false,
 };
 
 module.exports = nextConfig;
